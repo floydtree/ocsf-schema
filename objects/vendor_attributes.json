@@ -1,0 +1,21 @@
+{
+  "caption": "Vendor Attributes",
+  "description": "The Vendor Attributes object can be used to preserve values of specific attributes populated by the Vendor/Finding Provider. It helps distinguish between the orignal, vendor prodvided value of an attribute and the subsequently updated values.",
+  "extends": "object",
+  "name": "vendor_attributes",
+  "attributes": {
+    "types": {
+      "caption": "Finding Types",
+      "description": "One or more types of the finding, as reported by the Vendor (Finding Provider).",
+      "requirement": "optional"
+    },
+    "severity": {
+      "description": "The finding severity, as reported by the Vendor (Finding Provider).",
+      "requirement": "optional"
+    },
+    "severity_id": {
+      "description": "The finding severity ID, as reported by the Vendor (Finding Provider).",
+      "requirement": "optional"
+    }
+  }
+}
