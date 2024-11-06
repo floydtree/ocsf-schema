@@ -4890,6 +4890,11 @@
       "description": "The CVSS vector string is a text representation of a set of CVSS metrics. It is commonly used to record or transfer CVSS metric information in a concise form. For example: <code>3.1/AV:L/AC:L/PR:L/UI:N/S:U/C:H/I:N/A:H</code>.",
       "type": "string_t"
     },
+    "vendor_attributes": {
+      "caption": "Vendor Attributes",
+      "description": "The Vendor Attributes object, can be used to preserve preserve values of specific attributes populated by the Vendor/Finding Provider. It helps distinguish between the orignal, vendor prodvided value of an attribute and  the subsequently updated values.",
+      "type": "vendor_attributes"
+    },
     "vendor_name": {
       "caption": "Vendor Name",
       "description": "The name of the vendor. See specific usage.",
