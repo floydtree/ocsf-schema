@@ -3,6 +3,11 @@
   "description": "The Attribute Dictionary defines attributes and includes references to the events and objects in which they are used.",
   "name": "dictionary",
   "attributes": {
+    "access_level": {
+      "caption": "Access Level",
+      "description": "The access level of an entity. See specific usage.",
+      "type": "string_t"
+    },
     "access_list": {
       "caption": "Access List",
       "description": "The list of requested access rights.",
@@ -1051,7 +1056,7 @@
     },
     "condition": {
       "caption": "Condition",
-      "description": "The rule trigger condition for the rule. For example: SQL_INJECTION.",
+      "description": "The condition that evaluated in a rule, policy. See specific usage.",
       "type": "string_t"
     },
     "confidence": {
@@ -1290,6 +1295,11 @@
       "caption": "Creator",
       "description": "The user that created the object associated with event. See specific usage.",
       "type": "user"
+    },
+    "credential_last_used_time": {
+      "caption": "Credential Last Used Time",
+      "description": "The time when a user's credential was last used.",
+      "type": "timestamp_t"
     },
     "credential_uid": {
       "observable": 19,
@@ -2110,6 +2120,11 @@
       "type": "extension",
       "is_array": true
     },
+    "external_access_analysis":{
+      "caption": "External Access Analysis",
+      "description": "See specific usage.",
+      "type": "external_access_analysis"
+    },
     "factor_type": {
       "caption": "Factor Type",
       "description": "The type of authentication factor used in an authentication attempt.",
@@ -2329,6 +2344,12 @@
       "description": "The given or first name of the user.",
       "type": "string_t"
     },
+    "granted_actions": {
+      "caption": "Granted Actions",
+      "description": "The actions that were granted to the user via an IAM policy or otherwise. See specific usage.",
+      "type": "string_t",
+      "is_array": true
+    },
     "group": {
       "caption": "Group",
       "description": "The group object associated with an entity such as user, policy, or rule.",
@@ -2444,6 +2465,11 @@
       "caption": "Identifier Cookie",
       "description": "The client identifier cookie during client/server exchange.",
       "type": "string_t"
+    },
+    "identity_analysis":{
+      "caption": "Identity Analysis",
+      "description": "The identity analysis object describes details about the analysis performed on an Identity i.e. AWS IAM User, GCP IAM Principal, etc.",
+      "type": "identity_analysis"
     },
     "idle_timeout": {
       "caption": "SSO Idle Timeout",
@@ -3572,6 +3598,11 @@
       "description": "The unique identifier of an object's parent object. See specific usage.",
       "type": "string_t"
     },
+    "password_last_used_time": {
+      "caption": "Password Last Used Time",
+      "description": "The time when a user's password was last used.",
+      "type": "timestamp_t"
+    },
     "path": {
       "caption": "Path",
       "description": "The path that pertains to the event or object. See specific usage.",
@@ -3693,6 +3724,11 @@
       "caption": "Policy",
       "description": "Describes details of a policy. See specific usage.",
       "type": "policy"
+    },
+    "policy_analysis": {
+      "caption": "Policy Analysis",
+      "description": "The policy analysis object describes details about the analysis performed on a policy. See specific usage.",
+      "type": "policy_analysis"
     },
     "port": {
       "caption": "Port",
@@ -4192,6 +4228,12 @@
       "caption": "Response Time",
       "description": "The Domain Name System (DNS) response time.",
       "type": "timestamp_t"
+    },
+    "additional_restrictions":{
+      "caption": "Additional Restrictions",
+      "description": "The restrictions that apply to an entity, by the virtue of a policy. See specific usage.",
+      "type": "policy",
+      "is_array": true
     },
     "risk_details": {
       "caption": "Risk Details",
@@ -5226,6 +5268,16 @@
       "description": "The size in bytes of an attribute before truncation. See specific usage.",
       "type": "integer_t"
     },
+    "unused_actions_num": {
+      "caption": "Unused Actions",
+      "description": "The number of unused actions. See specific usage.",
+      "type": "integer_t"
+    },
+    "unused_services_num": {
+      "caption": "Unused Services",
+      "description": "The number of unused services. See specific usage.",
+      "type": "integer_t"
+    },
     "url": {
       "caption": "URL",
       "description": "The URL object that pertains to the event or object. See specific usage.",
@@ -5252,6 +5304,11 @@
       "caption": "HTTP User-Agent",
       "description": "The request header that identifies the operating system and web browser.",
       "type": "string_t"
+    },
+    "user_last_used_time": {
+      "caption": "User Last Used Time",
+      "description": "The time when a given user was last used.",
+      "type": "timestamp_t"
     },
     "user_result": {
       "caption": "User Result",
