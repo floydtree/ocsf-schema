@@ -5,6 +5,7 @@
   "extends": "rule",
   "attributes": {
     "condition": {
+      "description": "The rule trigger condition for the rule. For example: SQL_INJECTION.",
       "requirement": "optional"
     },
     "sensitivity": {

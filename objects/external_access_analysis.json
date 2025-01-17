@@ -1,0 +1,20 @@
+{
+  "caption": "External Access Analysis",
+  "description": "",
+  "extends": "object",
+  "name": "external_access_analysis",
+  "attributes": {
+    "access_level": {
+      "description": "The generalized access level granted to the external identity by the analyzed policy. e.g. Read, Write, List, etc.",
+      "requirement": "optional"
+    },
+    "accessor": {
+      "description": "The external identity that is granted access by the analyzed policy.",
+      "requirement": "recommended"
+    },
+    "additional_restrictions": {
+      "description": "Details about any restrictions that may apply, by the virtue of additional policies. e.g. RCPs, SCPs in AWS.",
+      "requirement": "optional"
+    }
+  }
+}
