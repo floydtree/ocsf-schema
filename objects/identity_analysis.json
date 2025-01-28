@@ -8,7 +8,8 @@
       "description": "Timestamp when the credential, represented by the <code>credential_uid</code>, was last used.",
       "requirement": "optional"
     },
-    "credential_uid": {
+    "user": {
+      "description": "Details about the identity that was analyzed.",
       "requirement": "optional"
     },
     "password_last_used_time": {

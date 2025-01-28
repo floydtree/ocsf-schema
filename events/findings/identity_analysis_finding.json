@@ -24,7 +24,7 @@
       "requirement": "optional"
     },
     "resources": {
-      "description": "Describes details about the Identity/Identities that are the subject of the analysis.",
+      "description": "Describes details about the Identity/Policy that are the subject of the analysis.",
       "group": "primary",
       "requirement": "recommended"
     }
