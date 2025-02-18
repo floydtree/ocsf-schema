@@ -3425,7 +3425,7 @@
     },
     "network_interfaces": {
       "caption": "Network Interfaces",
-      "description": "The network interfaces that are associated with the device, one for each unique MAC address/IP address/hostname/name combination.<p><b>Note:</b> The first element of the array is the network information that pertains to the event.</p>",
+      "description": "The physical or virtual network interfaces that are associated with the device, one for each unique MAC address/IP address/hostname/name combination.<p><b>Note:</b> The first element of the array is the network information that pertains to the event.</p>",
       "type": "network_interface",
       "is_array": true
     },
@@ -4136,6 +4136,11 @@
       "caption": "Raw Data",
       "description": "The raw event/finding data as received from the source.",
       "type": "string_t"
+    },
+    "raw_data_size": {
+      "caption": "Raw Data Size",
+      "description": "The size of the raw data which was transformed into an OCSF event, in bytes.",
+      "type": "long_t"
     },
     "raw_header": {
       "caption": "Raw Header",
