@@ -4367,7 +4367,7 @@
     "additional_restrictions":{
       "caption": "Additional Restrictions",
       "description": "The restrictions that apply to an entity, by the virtue of a policy. See specific usage.",
-      "type": "policy",
+      "type": "additional_restriction",
       "is_array": true
     },
     "risk_details": {
@@ -5072,7 +5072,7 @@
         },
         "99": {
           "caption": "Other",
-          "description": "The event status is not mapped. See the <code>status</code> attribute, which contains a data source specific value."
+          "description": "The status is not mapped. See the <code>status</code> attribute, which contains a data source specific value."
         }
       }
     },
