@@ -16,8 +16,8 @@
     },
     "policy_analysis": {
       "description": "Describes the results of analysis performed on an IAM Policy.",
-      "group": "context",
-      "requirement": "optional"
+      "group": "primary",
+      "requirement": "recommended"
     },
     "remediation": {
       "group": "context",
