@@ -28,6 +28,7 @@
       "requirement": "optional"
     },
     "message": {
+      "description": "The HTTP response message, such as the reason phrase associated with the status code (e.g., <code>\"OK\"</code>, <code>\"Not Found\"</code>).",
       "requirement": "optional"
     },
     "status": {
