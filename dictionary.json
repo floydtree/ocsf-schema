@@ -3912,7 +3912,7 @@
     },
     "logged_time": {
       "caption": "Logged Time",
-      "description": "<p>The time when the logging system collected and logged the event.</p>This attribute is distinct from the event time in that event time typically contain the time extracted from the original event. Most of the time, these two times will be different.",
+      "description": "The time when a system in the event pipeline collected and logged the event. See specific usage.",
       "type": "timestamp_t"
     },
     "loggers": {
@@ -4464,7 +4464,7 @@
     },
     "original_time": {
       "caption": "Original Time",
-      "description": "The original event time as reported by the event source. For example, the time in the original format from system event log such as Syslog on Unix/Linux and the System event file on Windows. Omit if event is generated instead of collected via logs.",
+      "description": "The original event time as reported by the event source, preserved as a pass-through string in its native format (e.g., Syslog timestamp, Windows event time). This is not normalized to <code>timestamp_t</code> &mdash; the normalized equivalent is the base event <code>time</code> attribute. Omit if the event is generated rather than collected via logs.",
       "type": "string_t"
     },
     "os": {
@@ -4872,7 +4872,7 @@
     },
     "processed_time": {
       "caption": "Processed Time",
-      "description": "The event processed time, such as an ETL operation.",
+      "description": "The time when the event was processed by an intermediate system, such as an ETL pipeline or event processor. See specific usage.",
       "type": "timestamp_t"
     },
     "product": {
