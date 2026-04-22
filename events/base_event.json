@@ -145,7 +145,7 @@
       "requirement": "recommended"
     },
     "time": {
-      "description": "The primary timestamp of the event &mdash; when the activity actually occurred at the source. This is the most important temporal attribute and <b>must</b> be a UTC epoch value in milliseconds (e.g., <code>1618524549901</code>). Mappers should use the most precise and authoritative timestamp available from the source. Do not confuse with <code>metadata.logged_time</code> (when the event was ingested) or <code>metadata.processed_time</code> (when it was normalized).",
+      "description": "The primary timestamp of the event &mdash; when the activity actually occurred at the source. For aggregate events (<code>count</code> &gt; 1), set this to <code>start_time</code> (the earliest event in the aggregate) to preserve causal ordering and consistent timeline alignment. This is the most important temporal attribute and <b>must</b> be a UTC epoch value in milliseconds (e.g., <code>1618524549901</code>). Mappers should use the most precise and authoritative timestamp available from the source. Do not confuse with <code>metadata.logged_time</code> (when the event was ingested) or <code>metadata.processed_time</code> (when it was normalized).",
       "group": "occurrence",
       "requirement": "required"
     },
