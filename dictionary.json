@@ -145,7 +145,7 @@
     },
     "activity_id": {
       "caption": "Activity ID",
-      "description": "The normalized identifier of the activity that triggered the event.",
+      "description": "The normalized identifier of the activity that triggered the event. Each event class defines its own set of activity values. Use <code>0</code> (Unknown) when the activity cannot be determined, and <code>99</code> (Other) when the activity does not match any defined value &mdash; in that case, populate <code>activity_name</code> with the source-specific label.",
       "sibling": "activity_name",
       "type": "integer_t",
       "enum": {
@@ -1075,7 +1075,7 @@
     },
     "category_uid": {
       "caption": "Category ID",
-      "description": "The category unique identifier of the event.",
+      "description": "The category unique identifier of the event. Each event class belongs to exactly one category. Producers must set this to the category defined by the event class being used.",
       "sibling": "category_name",
       "type": "integer_t"
     },
@@ -1201,7 +1201,7 @@
     },
     "class_uid": {
       "caption": "Class ID",
-      "description": "The unique identifier of a class. A class describes the attributes available in an event.",
+      "description": "The unique identifier of a class. A class describes the attributes available in an event. Producers must set this to the <code>uid</code> defined in the event class definition. For example, <code>Detection Finding</code> is <code>2004</code>.",
       "sibling": "class_name",
       "type": "integer_t"
     },
@@ -6245,40 +6245,34 @@
     },
     "status": {
       "caption": "Status",
-      "description": "The event status label, normalized to the caption of the <code>status_id</code> value. When <code>status_id</code> is <code>99</code> (Other), this attribute <b>must</b> contain the source-specific status label. For all other values, this should match the caption defined for that <code>status_id</code> enum value (e.g., <code>\"Success\"</code> for <code>status_id: 1</code>).",
+      "description": "The status label, normalized to the caption of the <code>status_id</code> value. When <code>status_id</code> is <code>99</code> (Other), this attribute <b>must</b> contain a source-specific status label. See specific usage.",
       "type": "string_t"
     },
     "status_code": {
       "caption": "Status Code",
-      "description": "The event status code, as reported by the event source.<br /><br />For example, in a Windows Failed Authentication event, this would be the value of 'Failure Code', e.g. 0x18.",
+      "description": "The source-specific status or error code. This preserves the original code for detailed troubleshooting beyond what <code>status_id</code> conveys. See specific usage.",
       "type": "string_t"
     },
     "status_detail": {
       "caption": "Status Detail",
-      "description": "A human-readable description providing additional context about the event/finding outcome. Use this to convey details that go beyond the normalized <code>status_id</code> and source-specific <code>status_code</code>, such as a failure reason or error message.",
+      "description": "Additional context about the outcome, beyond the normalized <code>status_id</code> and source-specific <code>status_code</code>. See specific usage.",
       "type": "string_t"
     },
     "status_details": {
       "caption": "Status Details",
-      "description": "A list of descriptions, containing additional information about the event/finding status.",
+      "description": "A list of descriptions providing additional context about the outcome. See specific usage.",
       "type": "string_t",
       "is_array": true
     },
     "status_id": {
       "caption": "Status ID",
-      "description": "The normalized identifier of the event status.",
+      "description": "The normalized status identifier. See specific usage.",
       "sibling": "status",
       "type": "integer_t",
       "enum": {
         "0": {
           "caption": "Unknown",
           "description": "The status is unknown."
-        },
-        "1": {
-          "caption": "Success"
-        },
-        "2": {
-          "caption": "Failure"
         },
         "99": {
           "caption": "Other",
@@ -6577,7 +6571,7 @@
     },
     "time": {
       "caption": "Event Time",
-      "description": "The normalized event occurrence time or the finding creation time.",
+      "description": "The normalized event occurrence time. See specific usage.",
       "type": "timestamp_t"
     },
     "timespan": {

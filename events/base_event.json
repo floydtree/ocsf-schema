@@ -12,7 +12,6 @@
       "profiles/security_control.json"
     ],
     "activity_id": {
-      "description": "The normalized identifier of the activity that triggered the event. Each event class defines its own set of activity values. Use <code>0</code> (Unknown) when the activity cannot be determined, and <code>99</code> (Other) when the activity does not match any defined value &mdash; in that case, populate <code>activity_name</code> with the source-specific label.",
       "group": "classification",
       "requirement": "required",
       "enum": {
@@ -33,7 +32,6 @@
       "requirement": "optional"
     },
     "category_uid": {
-      "description": "The category unique identifier of the event. Each event class belongs to exactly one category. Producers must set this to the category defined by the event class being used. Use <code>0</code> (Uncategorized) only for the base event class.",
       "group": "classification",
       "requirement": "required",
       "enum": {
@@ -47,7 +45,6 @@
       "requirement": "optional"
     },
     "class_uid": {
-      "description": "The unique identifier of the event class. A class describes the attributes available in an event. Producers must set this to the <code>uid</code> defined in the event class definition. For example, <code>Detection Finding</code> is <code>2004</code>.",
       "group": "classification",
       "requirement": "required",
       "enum": {
@@ -105,7 +102,6 @@
       "requirement": "optional"
     },
     "severity_id": {
-      "description": "The normalized severity of the event. Producers must map their source severity to one of the defined values: <code>1</code> (Informational), <code>2</code> (Low), <code>3</code> (Medium), <code>4</code> (High), <code>5</code> (Critical), or <code>6</code> (Fatal). Use <code>0</code> (Unknown) when severity cannot be determined, and <code>99</code> (Other) with a populated <code>severity</code> string when the source value does not map to a defined level.",
       "group": "classification",
       "requirement": "required"
     },
@@ -132,10 +128,20 @@
     "status_id": {
       "description": "The normalized status of the event outcome. Producers should map their source outcome to <code>1</code> (Success) or <code>2</code> (Failure). Use <code>0</code> (Unknown) when the outcome cannot be determined, and <code>99</code> (Other) with a populated <code>status</code> string when the source value does not map cleanly.",
       "group": "primary",
-      "requirement": "recommended"
+      "requirement": "recommended",
+      "enum": {
+        "1": {
+          "caption": "Success",
+          "description": "The activity completed successfully."
+        },
+        "2": {
+          "caption": "Failure",
+          "description": "The activity failed."
+        }
+      }
     },
     "time": {
-      "description": "The primary timestamp of the event &mdash; when the activity actually occurred at the source. For aggregate events (<code>count</code> &gt; 1), set this to <code>start_time</code> (the earliest event in the aggregate) to preserve causal ordering and consistent timeline alignment. This is the most important temporal attribute and <b>must</b> be a UTC epoch value in milliseconds (e.g., <code>1618524549901</code>). Mappers should use the most precise and authoritative timestamp available from the source. Do not confuse with <code>metadata.logged_time</code> (when the event was ingested) or <code>metadata.processed_time</code> (when it was normalized).",
+      "description": "The primary timestamp of the event &mdash; when the activity actually occurred at the source. This is not when the event record was created or serialized by the source system; for event lifecycle timestamps such as ingestion and processing, use <code>metadata.logged_time</code> and <code>metadata.processed_time</code> respectively. For aggregate events (<code>count</code> &gt; 1), set this to <code>start_time</code> (the earliest event in the aggregate) to preserve causal ordering and consistent timeline alignment. This <b>must</b> be a UTC epoch value in milliseconds (e.g., <code>1618524549901</code>). Mappers should use the most precise and authoritative timestamp available from the source.",
       "group": "occurrence",
       "requirement": "required"
     },
