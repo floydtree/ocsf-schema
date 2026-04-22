@@ -65,12 +65,12 @@
       "requirement": "optional"
     },
     "duration": {
-      "description": "The elapsed time of the activity in milliseconds, covering the window from <code>start_time</code> to <code>end_time</code>. Only populate for events that represent activity over a time range (e.g., a network session) or aggregated events (<code>count</code> &gt; 1). The value should equal <code>end_time - start_time</code>.",
+      "description": "The elapsed time of the aggregation window in milliseconds, from <code>start_time</code> to <code>end_time</code>. Only populate for aggregate events (<code>count</code> &gt; 1). The value should equal <code>end_time - start_time</code>.",
       "group": "occurrence",
       "requirement": "optional"
     },
     "end_time": {
-      "description": "The end of a time range for events that represent activity over a period (e.g., a network session) or the time of the most recent event in an aggregate (<code>count</code> &gt; 1). Do not populate for discrete, point-in-time events &mdash; use <code>time</code> alone.",
+      "description": "The time of the most recent event in an aggregate (<code>count</code> &gt; 1). Do not populate for discrete, point-in-time events &mdash; use <code>time</code> alone. Subclasses such as findings may redefine this for their own time-range semantics.",
       "group": "occurrence",
       "requirement": "optional"
     },
@@ -120,7 +120,7 @@
       "requirement": "required"
     },
     "start_time": {
-      "description": "The start of a time range for events that represent activity over a period (e.g., a network session) or the time of the earliest event in an aggregate (<code>count</code> &gt; 1). Do not populate for discrete, point-in-time events &mdash; use <code>time</code> alone.",
+      "description": "The time of the earliest event in an aggregate (<code>count</code> &gt; 1). Do not populate for discrete, point-in-time events &mdash; use <code>time</code> alone. Subclasses such as findings may redefine this for their own time-range semantics.",
       "group": "occurrence",
       "requirement": "optional"
     },
