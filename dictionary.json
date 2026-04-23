@@ -5213,7 +5213,7 @@
     },
     "raw_data_size": {
       "caption": "Raw Data Size",
-      "description": "The size of the original event data (as captured in <code>raw_data</code>) in bytes, before OCSF normalization. Useful for metering and capacity planning. Only populate when <code>raw_data</code> is also set.",
+      "description": "The size of the original event data (as captured in <code>raw_data</code>) in bytes, before OCSF normalization. Useful for metering and capacity planning.",
       "type": "long_t"
     },
     "raw_header": {
