@@ -5208,7 +5208,7 @@
     },
     "raw_data_hash": {
       "caption": "Raw Data Hash",
-      "description": "A fingerprint (hash) of the <code>raw_data</code> content. Use this to verify the integrity of the original event data or to deduplicate events. Only populate when <code>raw_data</code> is also set.",
+      "description": "A fingerprint (hash) of the <code>raw_data</code> content. Use this to verify the integrity of the original event data or to deduplicate events.",
       "type": "fingerprint"
     },
     "raw_data_size": {
