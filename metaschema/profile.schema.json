@@ -34,6 +34,9 @@
       "description": "A name of the profile. It must be a unique name. The name is all lower case letters, combine words using underscore.",
       "pattern": "^[a-z0-9_]*$"
     },
+    "references": {
+      "$ref": "references.schema.json"
+    },
     "attributes": {
       "type": "object",
       "description": "A dictionary of attributes for the profile.",

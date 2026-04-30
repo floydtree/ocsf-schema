@@ -1075,7 +1075,7 @@
     },
     "category_uid": {
       "caption": "Category ID",
-      "description": "The category unique identifier of the event. Each event class belongs to exactly one category. Producers must set this to the category defined by the event class being used.",
+      "description": "The category unique identifier of the event. Each event class belongs to exactly one category. Producers and mappers must set this to the category defined by the event class being used.",
       "sibling": "category_name",
       "type": "integer_t"
     },
@@ -1201,7 +1201,7 @@
     },
     "class_uid": {
       "caption": "Class ID",
-      "description": "The unique identifier of a class. A class describes the attributes available in an event. Producers must set this to the <code>uid</code> defined in the event class definition. For example, <code>Detection Finding</code> is <code>2004</code>.",
+      "description": "The unique identifier of a class. A class describes the attributes available in an event. Producers and mappers must set this to the <code>uid</code> defined in the event class definition. For example, <code>Detection Finding</code> is <code>2004</code>.",
       "sibling": "class_name",
       "type": "integer_t"
     },
@@ -4099,7 +4099,7 @@
     },
     "metadata": {
       "caption": "Metadata",
-      "description": "The metadata object describes the event producer, schema version, and processing information. Producers <b>must</b> populate <code>metadata.product</code> to identify the data source, and <code>metadata.version</code> to indicate the OCSF schema version used. Consumers rely on this to interpret the event correctly.",
+      "description": "The metadata object describes the event producer, schema version, and processing information. Producers and mappers <b>must</b> populate <code>metadata.product</code> to identify the data source, and <code>metadata.version</code> to indicate the OCSF schema version used. Consumers rely on this to interpret the event correctly.",
       "type": "metadata"
     },
     "metadata_endpoint": {
@@ -6763,7 +6763,7 @@
     },
     "type_uid": {
       "caption": "Type ID",
-      "description": "The event/finding type ID. It identifies the event's semantics and structure. Producers <b>must</b> compute this as <code>class_uid * 100 + activity_id</code>. It uniquely identifies the combination of event class and activity across the entire schema. For example, <code>Detection Finding: Create</code> is <code>200401</code>.",
+      "description": "The event/finding type ID. It identifies the event's semantics and structure. Producers and mappers <b>must</b> compute this as <code>class_uid * 100 + activity_id</code>. It uniquely identifies the combination of event class and activity across the entire schema. For example, <code>Detection Finding: Create</code> is <code>200401</code>.",
       "sibling": "type_name",
       "type": "long_t"
     },
