@@ -6,6 +6,9 @@
   "title": "Profile",
   "type": "object",
   "properties": {
+    "@deprecated": {
+      "$ref": "deprecated.schema.json"
+    },
     "annotations": {
       "type": "object",
       "description": "Annotations for this profile describing categories it belongs in."
